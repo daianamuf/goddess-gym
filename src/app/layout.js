@@ -1,9 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import {
-  NavigationMenu,
-  NavigationMenuLink,
-} from "@/components/ui/navigation-menu";
+import Nav from "@/components/Nav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,32 +24,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavigationMenu className="flex gap-3 p-6 mx-auto justify-center fixed top-0 right-0 left-0 font-medium text-white ">
-          <NavigationMenuLink
-            className="hover:bg-stone-300 hover:text-stone-700 transition duration-300 text-sm md:text-xl"
-            href="/"
-          >
-            Home
-          </NavigationMenuLink>
-          <NavigationMenuLink
-            className="hover:bg-stone-300 hover:text-stone-700  transition duration-300 text-sm md:text-xl"
-            href="/despre"
-          >
-            Despre noi
-          </NavigationMenuLink>
-          <NavigationMenuLink
-            className="hover:bg-stone-300 hover:text-stone-700  transition duration-300 text-sm md:text-xl"
-            href="/abonamente"
-          >
-            Abonamente
-          </NavigationMenuLink>
-          <NavigationMenuLink
-            className="hover:bg-stone-300 hover:text-stone-700  transition duration-300 text-sm md:text-xl"
-            href="/contact"
-          >
-            Contact
-          </NavigationMenuLink>
-        </NavigationMenu>
+        <Nav />
 
         {children}
       </body>
